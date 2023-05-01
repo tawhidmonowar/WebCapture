@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.prostudio.webtopdf">
+    package="com.prostudio.urltopdfconverter">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -14,10 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/SplashScreen"
-        android:name=".MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.prostudio.urltopdfconverter.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +25,5 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5151906942553409~6749911109"/>
-
     </application>
-
 </manifest>
