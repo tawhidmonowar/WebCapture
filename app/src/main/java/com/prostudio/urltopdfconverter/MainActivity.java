@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 .getSystemService(Context.PRINT_SERVICE);
 
         //setting the name of job
-        String jobName = getString(R.string.app_name) +webView.getUrl();
-
+        String tempName = "(url to pdf)" + webView.getUrl();
+        String jobName = tempName.replace("https://www.", " ");
         // Creating  PrintDocumentAdapter instance
         PrintDocumentAdapter printAdapter = webView.createPrintDocumentAdapter(jobName);
 
