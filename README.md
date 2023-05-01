@@ -22,3 +22,17 @@
 - Fast and reliable conversion process
 - Open-source and free to use
 
+## Prerequisites
+- Android Studio (Version 4.1 or later)
+- Gradle (Version 6.5 or later)
+- Java Development Kit (JDK) (Version 11 or later)
+
+## Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/tawhidmonowar/URLtoPDFConverter.git
+```
+2. Open the project in Android Studio
+3. Build and run the project using Gradle
+
