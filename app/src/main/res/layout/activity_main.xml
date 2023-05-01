@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:background="@color/white">
 
-    <TextView
+    <!-- WebView to load webPage  -->
+    <WebView
+        android:id="@+id/webViewMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter URL to convert to PDF:"/>
-
-    <EditText
-        android:id="@+id/url_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textUri"/>
-
+        android:layout_height="match_parent" />
+    <!-- Button To save the Pdf file when clicked -->
     <Button
-        android:id="@+id/convert_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convert to PDF"/>
+        android:layout_alignParentBottom="true"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
+        android:text="@string/convert_webpage_to_pdf"
+        android:id="@+id/savePdfBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</RelativeLayout>
