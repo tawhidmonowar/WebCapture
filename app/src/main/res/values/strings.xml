@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">URL to PDF Converter</string>
+    <string name="confirmation">Confirmation! Do you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="convert_webpage_to_pdf">Convert WebPage To PDF</string>
 </resources>
