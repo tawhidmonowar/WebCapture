@@ -15,6 +15,8 @@
 
 ![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter)
 
+![screenshot_profile](./screenshot/screenshot.png)
+
 ## Features
 - Convert any URL into a PDF file
 - Save PDF files to device storage or share with other apps
@@ -48,3 +50,12 @@ To convert a URL into a PDF file:
 2. Press the "Convert" button
 3. Wait for the conversion process to complete
 4. Save the PDF file to device storage
+
+## Contributing
+Contributions are welcome! If you find any bugs or issues, please submit them in the issue tracker. If you would like to contribute code, please fork the repository and create a pull request.
+
+## License
+URL to PDF Converter is licensed under the MIT License. See LICENSE for more information.
+
+## Author
+* **Tawhid Monowar** - *Computer science student*
