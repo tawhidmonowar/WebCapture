@@ -24,12 +24,6 @@
 - Fast and reliable conversion process
 - Open-source and free to use
 
-## Download
-
-The app is available for download on F-Droid
-
-<a href="https://f-droid.org/packages/com.yourcompany.urltopdfconverter/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-
 ## Prerequisites
 - Android Studio (Version 4.1 or later)
 - Gradle (Version 6.5 or later)
