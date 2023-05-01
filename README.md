@@ -14,3 +14,11 @@
 </p>
 
 ![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter)
+
+## Features
+- Convert any URL into a PDF file
+- Save PDF files to device storage or share with other apps
+- Simple and easy-to-use interface
+- Fast and reliable conversion process
+- Open-source and free to use
+
