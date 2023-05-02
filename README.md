@@ -5,7 +5,7 @@
     URL to PDF Converter is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference.
     <br/>
     <br/>
-    <a href="https://tawhidmonowar.github.io/URLtoPDFConverter">Download</a>
+    <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/releases">Download</a>
     .
     <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/issues">Report Bug</a>
     .
