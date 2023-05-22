@@ -4,4 +4,5 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="convert_webpage_to_pdf">Convert WebPage To PDF</string>
+    <string name="enter_url_here">Enter URL here</string>
 </resources>
