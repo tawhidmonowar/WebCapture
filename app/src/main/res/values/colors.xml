@@ -10,6 +10,6 @@
 
     <color name="colorPrimary">#E31D23</color>
     <color name="colorPrimaryDark">#E31D23</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#E31D23</color>
 
 </resources>
