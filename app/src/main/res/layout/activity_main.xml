@@ -6,14 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:background="@color/white">
+    android:background="#DCDEF6">
 
-    <!-- WebView to load webPage  -->
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background">
+
+        <!-- EditText to get URL -->
+        <EditText
+            android:id="@+id/webURL"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:hint="@string/enter_url_here"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="textUri"
+            android:layout_marginEnd="40dp"
+            android:textSize="15sp"
+            android:background="@drawable/button_background"/>
+
+        <!-- Back button -->
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24"
+            android:visibility="gone"/>
+
+        <!-- Search button -->
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/search"/>
+
+    </RelativeLayout>
+
+    <!-- Buttons Section -->
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <!-- DuckDuckGo Button -->
+        <LinearLayout
+            android:id="@+id/duckduckgo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/white">
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/duckduckgo"
+                android:scaleType="fitCenter"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DuckDuckGo" />
+
+        </LinearLayout>
+
+        <!-- Google Button -->
+        <LinearLayout
+            android:id="@+id/google"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/white">
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/google"
+                android:scaleType="fitCenter"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google" />
+
+        </LinearLayout>
+
+        <!-- Bing Button -->
+        <LinearLayout
+            android:id="@+id/bing"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/white">
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/bing"
+                android:scaleType="fitCenter"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="Bing"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- WebView to load webPage -->
     <WebView
         android:id="@+id/webViewMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <!-- Button To save the Pdf file when clicked -->
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:visibility="gone"/>
+
+    <!-- Button to save the PDF file when clicked -->
     <Button
         android:layout_alignParentBottom="true"
         android:textColor="#ffffff"
@@ -21,6 +159,14 @@
         android:text="@string/convert_webpage_to_pdf"
         android:id="@+id/savePdfBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="50dp"/>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
 </RelativeLayout>
