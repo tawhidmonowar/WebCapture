@@ -10,8 +10,10 @@ import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintJob;
 import android.print.PrintManager;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -19,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +31,9 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout duckduckgo, buttons, google, bing;
-    WebView printWeb;
-    WebView webView;
+    ImageView search, back;
+    WebView printWeb, webView;
+    EditText userInput;
 
     @SuppressLint({"SetJavaScriptEnabled", "MissingInflatedId"})
     @Override
@@ -41,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         // Initialize views
         webView = (WebView) findViewById(R.id.webViewMain);
         Button savePdfBtn = (Button) findViewById(R.id.savePdfBtn);
-        ImageView back = findViewById(R.id.back);
-        ImageView search = findViewById(R.id.search);
-        EditText userInput = findViewById(R.id.webURL);
+        back = findViewById(R.id.back);
+        search = findViewById(R.id.search);
+        userInput = findViewById(R.id.webURL);
         ProgressBar progressBar = findViewById(R.id.progressBar);
 
         buttons = findViewById(R.id.buttons);
@@ -75,32 +79,23 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setLoadsImagesAutomatically(true);
 
+        // EditText enter key listener
+        userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    performSearch();
+                    return true;
+                }
+                return false;
+            }
+        });
+
         // Search button click listener
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String inputUrl = userInput.getText().toString().trim();
-                // Check if the input URL is empty or does not start with "http://" or "https://"
-                if (inputUrl.isEmpty() || (!inputUrl.startsWith("http://") && !inputUrl.startsWith("https://"))) {
-                    // Add "https://" and "www." to the input URL
-                    inputUrl = "https://www." + inputUrl;
-                } else if (inputUrl.startsWith("http://")) {
-                    // Replace "http://" with "https://" in the input URL
-                    inputUrl = "https://" + inputUrl.substring(7);
-                } else if (!inputUrl.startsWith("www.")) {
-                    // Add "www." to the input URL
-                    inputUrl = "https://www." + inputUrl;
-                }
-                // Add a trailing "/" to the input URL if it doesn't have one
-                if (!inputUrl.endsWith("/")) {
-                    inputUrl += "/";
-                }
-
-                loadWebPage(inputUrl);
-                buttons.setVisibility(View.GONE);
-                search.setVisibility(View.GONE);
-                webView.setVisibility(View.VISIBLE);
-                back.setVisibility(View.VISIBLE);
+                performSearch();
             }
         });
 
@@ -259,5 +254,33 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadWebPage(String url) {
         webView.loadUrl(url);
+    }
+
+    // Perform search function
+    private void performSearch() {
+
+        String inputUrl = userInput.getText().toString().trim();
+        // Check if the input URL is empty or does not start with "http://" or "https://"
+        if (inputUrl.isEmpty() || (!inputUrl.startsWith("http://") && !inputUrl.startsWith("https://"))) {
+            // Add "https://" and "www." to the input URL
+            inputUrl = "https://www." + inputUrl;
+        } else if (inputUrl.startsWith("http://")) {
+            // Replace "http://" with "https://" in the input URL
+            inputUrl = "https://" + inputUrl.substring(7);
+        } else if (!inputUrl.startsWith("www.")) {
+            // Add "www." to the input URL
+            inputUrl = "https://www." + inputUrl;
+        }
+        // Add a trailing "/" to the input URL if it doesn't have one
+        if (!inputUrl.endsWith("/")) {
+            inputUrl += "/";
+        }
+
+        loadWebPage(inputUrl);
+        buttons.setVisibility(View.GONE);
+        search.setVisibility(View.GONE);
+        webView.setVisibility(View.VISIBLE);
+        back.setVisibility(View.VISIBLE);
+
     }
 }
