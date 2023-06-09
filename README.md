@@ -43,8 +43,8 @@ The app is available for download on F-Droid.
 ```
 git clone https://github.com/tawhidmonowar/URLtoPDFConverter.git
 ```
-2. Open the project in Android Studio
-3. Build and run the project using Gradle
+2. Open the project in Android Studio.
+3. Build and run the project using Gradle.
 
 ## Usage
 To convert a URL into a PDF file:
