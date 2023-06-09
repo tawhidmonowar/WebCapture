@@ -18,24 +18,24 @@
 ![screenshot_profile](./screenshot/screenshot.png)
 
 ## Features
-- Convert any URL into a PDF file
-- Save PDF files to device storage or share with other apps
-- Simple and easy-to-use interface
-- Fast and reliable conversion process
-- Open-source and free to use
+- Convert any URL into a PDF file.
+- Save PDF files to device storage or share with other apps.
+- Simple and easy-to-use interface.
+- Fast and reliable conversion process.
+- Open-source and free to use.
 
 <a href="https://www.buymeacoffee.com/tawhidmonowar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"></a>
 
 ## Download
 
-The app is available for download on F-Droid
+The app is available for download on F-Droid.
 
 <a href="https://f-droid.org/packages/com.prostudio.urltopdfconverter/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
 
 ## Prerequisites
-- Android Studio (Version 4.1 or later)
-- Gradle (Version 6.5 or later)
-- Java Development Kit (JDK) (Version 11 or later)
+- Android Studio (Version 4.1 or later).
+- Gradle (Version 6.5 or later).
+- Java Development Kit (JDK) (Version 11 or later).
 
 ## Installation
 
@@ -48,10 +48,10 @@ git clone https://github.com/tawhidmonowar/URLtoPDFConverter.git
 
 ## Usage
 To convert a URL into a PDF file:
-1. Enter the URL in the input field
-2. Press the "Convert" button
-3. Wait for the conversion process to complete
-4. Save the PDF file to device storage
+1. Enter the URL in the input field.
+2. Press the "Convert" button.
+3. Wait for the conversion process to complete.
+4. Save the PDF file to device storage.
 
 ## Contributing
 Contributions are welcome! If you find any bugs or issues, please submit them in the issue tracker. If you would like to contribute code, please fork the repository and create a pull request.
