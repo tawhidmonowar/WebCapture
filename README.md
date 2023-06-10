@@ -61,4 +61,4 @@ URL to PDF Converter is licensed under the MIT License. See
 <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/blob/main/LICENSE">LICENSE</a> for more information.
 
 ## Author
-* **Tawhid Monowar** - *Computer science student*
+* **Tawhid Monowar** - *Computer Science & Engineering Student*
