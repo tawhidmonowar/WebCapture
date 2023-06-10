@@ -54,7 +54,7 @@ To convert a URL into a PDF file:
 4. Save the PDF file to device storage.
 
 ## Contributing
-Contributions are welcome! If you find any bugs or issues, please submit them in the issue tracker. If you would like to contribute code, please fork the repository and create a pull request.
+Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/URLtoPDFConverter/issues). If you would like to contribute code, please fork the repository and create a pull request.
 
 ## License
 URL to PDF Converter is licensed under the MIT License. See 
