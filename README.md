@@ -62,3 +62,9 @@ URL to PDF Converter is licensed under the MIT License. See
 
 ## Author
 * **<a href="https://tawhidmonowar.github.io/profile">Tawhid Monowar</a>** - *Computer Science & Engineering Student*
+
+
+## Save Palestine
+Stand up for Palestine's existence! It is disappearing from Maps, let us raise our voices and demand a fair representation for this land and its people.
+
+<img src="./screenshot/save_palestine.jpeg" width="600" alt="save_palestine">
