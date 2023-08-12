@@ -13,7 +13,7 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter) ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![Free Palestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
+![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter) ![PRs welcome](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
 
 ![screenshot_profile](./screenshot/screenshot.png)
 
@@ -64,10 +64,4 @@ URL to PDF Converter is licensed under the MIT License. See
 * **<a href="https://tawhidmonowar.github.io/profile">Tawhid Monowar</a>** - *Computer Science & Engineering Student*
 
 
-## Save Palestine
-Stand up for Palestine's existence! It is disappearing from Maps, let us raise our voices and demand a fair representation for this land and its people.
-[Don't watch this video!](https://youtu.be/O5fbyEV36pU)
 
-
-
-<img src="./screenshot/save_palestine.jpeg" width="600" alt="save_palestine">
