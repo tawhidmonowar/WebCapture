@@ -13,7 +13,7 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter) ![PRs welcome](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
+![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter) ![PRs welcome]
 
 ![screenshot_profile](./screenshot/screenshot.png)
 
