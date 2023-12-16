@@ -5,4 +5,7 @@
     <string name="no">No</string>
     <string name="convert_webpage_to_pdf">Convert WebPage To PDF</string>
     <string name="enter_url_here">Enter URL here</string>
+    <string name="email"><a href="mailto:tawhidmonowar@gmail.com">tawhidmonowar@gmail.com</a></string>
+    <string name="github"><a href="https://github.com/tawhidmonowar/URLtoPDFConverter">https://github.com/tawhidmonowar/URLtoPDFConverter</a></string>
+    <string name="about_str">URL to PDF Converter is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference.</string>
 </resources>
