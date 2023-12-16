@@ -3,6 +3,7 @@ package com.prostudio.urltopdfconverter;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -54,6 +55,19 @@ public class MainActivity extends AppCompatActivity {
         duckduckgo = findViewById(R.id.duckduckgo);
         google = findViewById(R.id.google);
         bing = findViewById(R.id.bing);
+
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/plain".equals(type)) {
+                String sharedURL = intent.getStringExtra(Intent.EXTRA_TEXT);
+                if (sharedURL != null) {
+                    userInput.setText(sharedURL);
+                }
+            }
+        }
 
         // Set WebView client
         webView.setWebViewClient(new WebViewClient() {
