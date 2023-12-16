@@ -176,15 +176,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the name of the print job
         String tempName = "(url to pdf)" + webView.getUrl();
-        String jobName = tempName.replace("https://www.", " ");
+        String jobName = tempName.replace("https://.", " ");
 
         // Create PrintDocumentAdapter instance
         PrintDocumentAdapter printAdapter = webView.createPrintDocumentAdapter(jobName);
 
         // Create a print job with name and adapter instance
         assert printManager != null;
-        printJob = printManager.print(jobName, printAdapter,
-                new PrintAttributes.Builder().build());
+        printJob = printManager.print(jobName, printAdapter, new PrintAttributes.Builder().build());
     }
 
     @Override
@@ -194,22 +193,22 @@ public class MainActivity extends AppCompatActivity {
         if (printJob != null && printBtnPressed) {
             if (printJob.isCompleted()) {
                 // Show "Completed" message
-                Snackbar.make(parentLayout, "Completed", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Completed");
             } else if (printJob.isStarted()) {
                 // Show "Started" message
-                Snackbar.make(parentLayout, "Started", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Started");
             } else if (printJob.isBlocked()) {
                 // Show "Blocked" message
-                Snackbar.make(parentLayout, "Blocked", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Blocked");
             } else if (printJob.isCancelled()) {
                 // Show "Cancelled" message
-                Snackbar.make(parentLayout, "Cancelled", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Cancelled");
             } else if (printJob.isFailed()) {
                 // Show "Failed" message
-                Snackbar.make(parentLayout, "Failed", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Failed");
             } else if (printJob.isQueued()) {
                 // Show "Queued" message
-                Snackbar.make(parentLayout, "Queued", Snackbar.LENGTH_SHORT).show();
+                showSnackbar("Queued");
             }
             // Set printBtnPressed to false
             printBtnPressed = false;
@@ -260,27 +259,27 @@ public class MainActivity extends AppCompatActivity {
     private void performSearch() {
 
         String inputUrl = userInput.getText().toString().trim();
-        // Check if the input URL is empty or does not start with "http://" or "https://"
-        if (inputUrl.isEmpty() || (!inputUrl.startsWith("http://") && !inputUrl.startsWith("https://"))) {
-            // Add "https://" and "www." to the input URL
-            inputUrl = "https://www." + inputUrl;
-        } else if (inputUrl.startsWith("http://")) {
-            // Replace "http://" with "https://" in the input URL
-            inputUrl = "https://" + inputUrl.substring(7);
-        } else if (!inputUrl.startsWith("www.")) {
-            // Add "www." to the input URL
-            inputUrl = "https://www." + inputUrl;
-        }
-        // Add a trailing "/" to the input URL if it doesn't have one
-        if (!inputUrl.endsWith("/")) {
-            inputUrl += "/";
-        }
+        String url = formatUrl(inputUrl);
 
-        loadWebPage(inputUrl);
+        loadWebPage(url);
         buttons.setVisibility(View.GONE);
         search.setVisibility(View.GONE);
         webView.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
 
     }
+
+    public static String formatUrl(String url) {
+        // Check if the URL already has a valid protocol (http/https)
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+            return url;
+        }
+        // Add "https://" if the URL starts with "www"
+        if (url.startsWith("www.")) {
+            return "https://" + url;
+        }
+        // If no protocol or "www", assume it's a domain name and prepend "https://"
+        return "https://" + url;
+    }
+
 }
