@@ -12,22 +12,35 @@
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:gravity="center_vertical"
         android:background="@drawable/button_background">
+
+        <!-- About Button-->
+        <ImageView
+            android:id="@+id/about"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_about"/>
 
         <!-- EditText to get URL -->
         <EditText
             android:id="@+id/webURL"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:padding="10dp"
             android:hint="@string/enter_url_here"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:inputType="textUri"
-            android:layout_marginEnd="40dp"
+            android:layout_toEndOf="@+id/about"
+            android:layout_toStartOf="@+id/search"
             android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:background="@drawable/button_background"/>
 
         <!-- Back button -->
