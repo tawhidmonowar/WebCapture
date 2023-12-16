@@ -32,7 +32,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout duckduckgo, buttons, google, bing;
-    ImageView search, back;
+    ImageView search, back, about;
     WebView printWeb, webView;
     EditText userInput;
 
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Button savePdfBtn = (Button) findViewById(R.id.savePdfBtn);
         back = findViewById(R.id.back);
         search = findViewById(R.id.search);
+        about = findViewById(R.id.about);
         userInput = findViewById(R.id.webURL);
         ProgressBar progressBar = findViewById(R.id.progressBar);
 
@@ -122,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
                 search.setVisibility(View.VISIBLE);
                 webView.setVisibility(View.GONE);
                 back.setVisibility(View.GONE);
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
             }
         });
 
