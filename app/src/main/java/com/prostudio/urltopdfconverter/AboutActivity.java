@@ -18,11 +18,10 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme);
+        setTheme(R.style.AppTheme2);
         setContentView(R.layout.activity_about);
         initToolbar();
     }
-
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
