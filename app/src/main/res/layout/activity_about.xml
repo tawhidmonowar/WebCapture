@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:text="Last Update"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40" />
+                    android:textColor="@color/grey_60" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:text="Version"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40" />
+                    android:textColor="@color/grey_60" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -134,14 +134,14 @@
                     android:layout_height="wrap_content"
                     android:text="Contact"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40" />
+                    android:textColor="@color/grey_60" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_90" />
+                    android:textColor="@color/grey_60" />
 
             </LinearLayout>
 
