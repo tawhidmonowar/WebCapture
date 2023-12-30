@@ -88,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="December 2023"
+                    android:text="January 2024"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_90" />
 
@@ -141,7 +141,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@color/grey_60"
+                    android:autoLink="email" />
 
             </LinearLayout>
 
@@ -169,7 +170,8 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_90"
                     android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:ellipsize="end"
+                    android:autoLink="all"/>
 
             </LinearLayout>
 
