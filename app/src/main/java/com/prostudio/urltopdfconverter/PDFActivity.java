@@ -17,7 +17,9 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -33,6 +35,17 @@ public class PDFActivity extends AppCompatActivity {
         webView = findViewById(R.id.webViewMain);
         Button savePdfBtn = findViewById(R.id.savePdfBtn);
         ProgressBar progressBar = findViewById(R.id.progressBar);
+
+        // Checking Internet Connection
+        if(InternetCheck.isConnected(this)) {
+            RelativeLayout relativeLayout = findViewById(R.id.webViewLayout);
+            relativeLayout.setVisibility(View.VISIBLE);
+
+        } else {
+            ImageView imageView = findViewById(R.id.no_internet_img);
+            imageView.setVisibility(View.VISIBLE);
+        }
+
 
         // Set WebView client
         webView.setWebViewClient(new WebViewClient() {
