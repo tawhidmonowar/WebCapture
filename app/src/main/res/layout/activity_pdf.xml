@@ -3,30 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCDEF6"
+    android:background="#E4E4E4"
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/webViewMain"
+    <RelativeLayout
+        android:id="@+id/webViewLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:visibility="gone">
 
-    <Button
-        android:id="@+id/savePdfBtn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="@string/convert_webpage_to_pdf"
-        android:textColor="#ffffff" />
+        <WebView
+            android:id="@+id/webViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+        <Button
+            android:id="@+id/savePdfBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="@string/convert_webpage_to_pdf"
+            android:textColor="#ffffff" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/no_internet_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/no_internet_connection"
+        android:visibility="gone"/>
 
 </RelativeLayout>
