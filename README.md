@@ -71,10 +71,6 @@ To convert a URL into a PDF file:
 ## Contributing
 Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/URLtoPDFConverter/issues). If you would like to contribute code, please fork the repository and create a pull request.
 
-## License
-URL to PDF Converter is licensed under the MIT License. See 
-<a href="https://github.com/tawhidmonowar/URLtoPDFConverter/blob/main/LICENSE">LICENSE</a> for more information.
-
 ## Author
 * **<a href="https://tawhidmonowar.github.io/profile">Tawhid Monowar</a>** - *Computer Science & Engineering Student*
 
