@@ -39,7 +39,7 @@
 - Swap Refresh.
 - Next, Back, Reload Buttons.
 - Progress Bar on webView activity.
-- No Internet Connection Message.
+- [x] No Internet Connection Message.
 
 ## Download
 
@@ -71,9 +71,9 @@ To convert a URL into a PDF file:
 ## Contributing
 Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/URLtoPDFConverter/issues). If you would like to contribute code, please fork the repository and create a pull request.
 
-## Author
-* **<a href="https://tawhidmonowar.github.io/profile">Tawhid Monowar</a>** - *Computer Science & Engineering Student*
-
 ## Save Palestine
 Stand up for Palestine's existence! It is disappearing from Maps, let us raise our voices and demand a fair representation for this land and its people.
 [Don't watch this video!](https://youtu.be/O5fbyEV36pU)
+
+## Author
+* **<a href="https://tawhidmonowar.github.io/profile">Tawhid Monowar</a>** - *Computer Science & Engineering Student*
