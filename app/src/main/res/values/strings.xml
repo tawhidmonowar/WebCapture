@@ -17,4 +17,6 @@
     <string name="bing">Bing</string>
     <string name="google">Google</string>
     <string name="duckduckgo">DuckDuckGo</string>
+    <string name="app_version">1.0.2</string>
+    <string name="last_update">February 2024</string>
 </resources>
