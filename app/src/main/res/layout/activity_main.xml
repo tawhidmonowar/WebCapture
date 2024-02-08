@@ -235,7 +235,7 @@
                             android:background="@drawable/background"
                             android:backgroundTint="@color/white"
                             android:gravity="center"
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:padding="10dp">
 
                             <ImageButton
@@ -275,7 +275,7 @@
                             android:background="@drawable/background"
                             android:backgroundTint="@color/white"
                             android:gravity="center"
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:padding="8dp">
 
                             <ImageButton
@@ -315,7 +315,7 @@
                             android:background="@drawable/background"
                             android:backgroundTint="@color/white"
                             android:gravity="center"
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:padding="8dp">
 
                             <ImageButton
