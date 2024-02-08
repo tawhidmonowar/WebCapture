@@ -66,8 +66,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/about_str"
-                android:textColor="@color/grey_90" />
+                android:textColor="@color/grey_60"
+                android:textSize="13sp"/>
 
             <View
                 android:layout_width="0dp"
@@ -83,14 +85,15 @@
                     android:layout_height="wrap_content"
                     android:text="Last Update"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@color/grey_90" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="January 2024"
+                    android:text="@string/last_update"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_90" />
+                    android:textColor="@color/grey_60"
+                    android:textSize="12sp"/>
 
             </LinearLayout>
 
@@ -108,14 +111,15 @@
                     android:layout_height="wrap_content"
                     android:text="Version"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@color/grey_90"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1.0.1"
+                    android:text="@string/app_version"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_90" />
+                    android:textColor="@color/grey_60"
+                    android:textSize="12sp"/>
 
             </LinearLayout>
 
@@ -134,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="Contact"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@color/grey_90" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -161,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:text="Github"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40" />
+                    android:textColor="@color/grey_90" />
 
                 <TextView
                     android:layout_width="wrap_content"
