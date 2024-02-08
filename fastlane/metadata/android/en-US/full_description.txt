@@ -17,3 +17,5 @@ To convert a URL into a PDF file:
 3. Wait for the conversion process to complete
 4. Save the PDF file to device storage
 
+Support Us
+https://www.buymeacoffee.com/tawhidmonowar
