@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean isValidURL(String urlString) {
         // Employ Apache Commons Validator for robust validation
-        UrlValidator urlValidator = new UrlValidator();
+        UrlValidator urlValidator = new UrlValidator(new String[]{"http","https"}, UrlValidator.ALLOW_LOCAL_URLS);
         return urlValidator.isValid(urlString);
     }
 
