@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -16,12 +17,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import org.apache.commons.validator.routines.UrlValidator;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,34 +107,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startPrinting(String url) {
-        Intent intent = new Intent(MainActivity.this, PDFActivity.class);
-        if (isValidURL(url)) {
-            intent.putExtra("input-url", formatUrl(url));
+        if (isUrl(url)) {
+            Intent intent = new Intent(MainActivity.this, PDFActivity.class);
+            intent.putExtra("input-url", url);
             startActivity(intent);
-        } else {
-            Snackbar.make(findViewById(android.R.id.content), "URL is not valid!", Snackbar.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "URl is Invalid!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public boolean isValidURL(String urlString) {
-        // Employ Apache Commons Validator for robust validation
-        UrlValidator urlValidator = new UrlValidator(new String[]{"http","https"}, UrlValidator.ALLOW_LOCAL_URLS);
-        return urlValidator.isValid(urlString);
-    }
 
-    public static String formatUrl(String url) {
-        // Check if the URL already has a valid protocol (http/https)
-        if (url.startsWith("http://") || url.startsWith("https://")) {
-            return url;
+    public static boolean isUrl(String input) {
+        final String URL_REGEX = "^((https?|ftp)://|(www|ftp)\\.)?[a-z0-9-]+(\\.[a-z0-9-]+)+([/?].*)?$";
+        Pattern pattern = Pattern.compile(URL_REGEX);
+        Matcher matcher = pattern.matcher(input);//replace with string to compare
+        if(matcher.find()) {
+            System.out.println("String contains URL");
+            return true;
         }
-        // Add "https://" if the URL starts with "www"
-        if (url.startsWith("www.")) {
-            return "https://" + url;
-        }
-        // If no protocol or "www", assume it's a domain name and prepend "https://"
-        return "https://" + url;
+        return false;
     }
-
     // Clear input_url
     public void clear(View view) {
         input_url.setText("");
