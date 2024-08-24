@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">URL to PDF</string>
+    <string name="app_name">WebCapture</string>
     <string name="confirmation">Confirmation! Do you want to exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
