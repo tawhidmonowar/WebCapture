@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId 'com.prostudio.urltopdfconverter'
+        applicationId 'com.tawhid.webcapture'
         minSdk 19
         targetSdk 33
         versionCode 3
@@ -30,7 +30,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.prostudio.urltopdfconverter'
+    namespace 'com.tawhid.webcapture'
 }
 
 dependencies {
