@@ -73,104 +73,6 @@
             to be better than Bash scripting at least some of the time.</li>
         </ul>
 
-        <h1 id="usage">Usage</h1>
-        <p>First clone a fresh copy of your repo, using the <a
-            href="https://stackoverflow.com/q/3959924/438886"><code>--mirror</code></a> flag:</p>
-        <pre><code>$ git clone --mirror git://example.com/some-big-repo.git
-</code></pre>
-        <p>This is a <a href="https://git-scm.com/docs/gitglossary.html#def_bare_repository">bare</a>
-          repo, which means your normal files won't be visible, but it is a <em>full</em> copy of the Git database of
-          your repository, and at this point
-          you should <strong>make a backup of it</strong> to ensure you don't lose anything.</p>
-        <p>Now you can run the BFG to clean your repository up:</p>
-        <pre><code>$ java -jar <a class="latest-download-link" data-event-category="Java command" href="#download">bfg.jar</a> --strip-blobs-bigger-than 100M some-big-repo.git
-</code></pre>
-        <p>The BFG will update your commits and all branches and tags so they are clean, but it doesn't physically
-          delete the unwanted stuff. Examine the repo to make sure your history has been updated, and then use the
-          standard <a href="https://git-scm.com/docs/git-gc"><code>git gc</code></a> command to strip out the unwanted
-          dirty data, which Git will now recognise as surplus to requirements:</p>
-        <pre><code>$ cd some-big-repo.git
-$ git reflog expire --expire=now --all && git gc --prune=now --aggressive
-</code></pre>
-        <p>Finally, once you're happy with the updated state of your repo, push it back up <em>(note that because your
-            clone command used the <code>--mirror</code> flag, this push will update <strong>all</strong> refs on your
-            remote server)</em>:</p>
-        <pre><code>$ git push</code></pre>
-        <p>At this point, you're ready for everyone to ditch their old copies of the repo and do fresh clones of the
-          nice, new pristine data. It's best to delete all old clones, as they'll have dirty history that you
-          <i>don't</i> want to risk pushing back into your newly cleaned repo.
-        </p>
-
-        <h1 id="examples">Examples</h1>
-        <p>In all these examples <code>bfg</code> is an alias for <code>java -jar bfg.jar</code>.</p>
-
-        <p>Delete all files named 'id_rsa' or 'id_dsa' :</p>
-        <pre><code>$ bfg <strong>--delete-files id_{dsa,rsa}</strong>  my-repo.git</code></pre>
-
-        <p>Remove all blobs bigger than 50 megabytes :</p>
-        <pre><code>$ bfg <strong>--strip-blobs-bigger-than 50M</strong>  my-repo.git</code></pre>
-
-        <p>Replace all passwords listed in a file <em>(prefix lines 'regex:' or 'glob:' if required)</em> with
-          <code>***REMOVED***</code> wherever they occur in your repository :</p>
-        <pre><code>$ bfg <strong>--replace-text passwords.txt</strong>  my-repo.git</code></pre>
-
-        <p>Remove all folders or files named '.git' - a <a
-            href="https://github.com/git/git/blob/d29e9c89d/fsck.c#L228-L229">reserved filename</a> in Git. These often
-          <a href="https://stackoverflow.com/q/16821649/438886">become a problem</a> when migrating to
-          Git from other source-control systems like Mercurial :
-        </p>
-        <pre><code>$ bfg <strong>--delete-folders .git --delete-files .git  --no-blob-protection</strong>  my-repo.git</code></pre>
-
-        <p>
-          For further command-line options, you can run the BFG without any arguments,
-          which will output <a
-            href="https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.madgag&a=bfg&v=LATEST&e=txt">text
-            like this</a>.
-        </p>
-
-        <h1 id="protected-commits">Your <em>current</em> files are sacred...</h1>
-
-        <p>
-          By default the BFG doesn't modify the contents of your <em>latest</em> commit on your
-          <code>master</code> (or '<code>HEAD</code>') branch, even though it <em>will</em> clean
-          all the commits before it.
-        </p>
-
-        <p>
-          That's because your latest commit is likely to be the one
-          that you deploy to production, and a simple deletion of a private credential or a big
-          file is quite likely to result in broken code that no longer has the hard-coded data it
-          expects - you need to fix that, the BFG can't do it for you. Once you've committed your
-          changes- and your latest commit is <em>clean</em> with none of the undesired data in it -
-          you can run the BFG to perform it's simple deletion operations over all your historical
-          commits.
-        </p>
-
-        <p>Note:</p>
-        <ul>
-
-          <li>Cleaning Git repos is about <em>completely</em> eradicating bad stuff from history.
-            If something 'bad' (like a 10MB file, when you're specifying
-            <code>--strip-blobs-bigger-than 5M</code>) is in a protected commit, it <em>won't</em> be
-            deleted - it'll persist in your repository,
-            <a href="https://github.com/rtyley/bfg-repo-cleaner/issues/53#issuecomment-50088997">even
-              if the BFG deletes if from earlier commits</a>. If you want the BFG to delete
-            something <strong>you need to make sure your current commits are <em>clean</em></strong>.
-
-          <li>Note that although the files in those protected commits won't be changed, when those commits follow on
-            from earlier dirty commits, their commit
-            ids <strong>will</strong> change, to reflect the changed history - only the SHA-1 id of the filesystem-tree
-            will remain the same.
-        </ul>
-
-        <p>
-          If you want to turn off the protection (in general, not recommended) you can
-          use the <code>--no-blob-protection</code> flag:
-        </p>
-
-        <pre><code>$ bfg --strip-biggest-blobs 100 <strong>--no-blob-protection</strong> repo.git</code></pre>
-
-
 
         <h1 id="speed">Faster...</h1>
         <p>The BFG is <a
@@ -184,22 +86,6 @@ $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
         &nbsp;
         <p>BFG's performance advantage is due to these factors:</p>
 
-        <ul>
-          <li>The approach of <code>git-filter-branch</code> is to step through every commit in your repository,
-            examining the complete file-hierarchy of each one. For the intended use-cases of The BFG this is wasteful,
-            as we don't care <em>where</em> in a file structure a 'bad' file exists - we just want it dealt with.
-            Inherent in the nature of Git is that <em>every</em> file and folder is represented precisely once (and
-            given a unique <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1</a> hash-id). The BFG takes advantage of
-            this to process each and every file &amp; folder exactly <strong>once</strong> - no need for extra work.
-          </li>
-          <li>Taking advantage of the great support for parallelism in <a
-              href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html">Scala</a> and the JVM, the
-            BFG does multi-core processing by default - the work of cleaning your Git repository is spread over every
-            single core in your machine and typically consumes 100% of capacity for a substantial portion of the run.
-          </li>
-          <li>All action takes place in a single process (the process of the JVM), so doesn't require the frequent
-            fork-and-exec-ing needed by <code>git-filter-branch</code>'s mix of Bash and C code.</li>
-        </ul>
 
         <h1 id="feedback">Feedback</h1>
         <blockquote>
@@ -209,38 +95,12 @@ $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
           </figcaption>
         </blockquote>
         &nbsp;
-        <blockquote>
-          I found The BFG Repo-Cleaner and ran it to clean up some large files, and was amazed by the performance.
-          <figcaption class="attribution">— <a href="https://github.com/Fryguy">Jason Frey</a>, Software Engineer at <a
-              href="https://www.redhat.com/">Red Hat</a></figcaption>
-        </blockquote>
-        &nbsp;
-        <blockquote>
-          I was able to shrink the current repository down to ~500 megabytes in about 10 minutes when using this tool.
-          My hand crafted scripts clock in at 615 megabytes in 3 days time for comparison.
-          <figcaption class="attribution">— <a href="https://github.com/eglaysher">Elliot Glaysher</a>, Google Software
-            Engineer on <a href="https://code.google.com/p/chromium/issues/detail?id=111570#c29">Google Chrome</a>
-          </figcaption>
-        </blockquote>
-        &nbsp;
-        <blockquote>
-          The BFG was simple to set up and so fast that I had to ask Roberto, <em>"Is that it?"</em> and check for
-          myself... it worked exactly as intended.
-          <figcaption class="attribution">— <a href="https://github.com/ntoll">Nicholas Tollervey</a>, Developer at <a
-              href="https://www.guardian.co.uk/">The Guardian</a></figcaption>
-        </blockquote>
-        &nbsp;
-        <blockquote>
-          Roberto's creations (<a href="https://play.google.com/store/apps/details?id=com.madgag.agit">Agit</a> and The
-          BFG) are both very cool ;-)
-          <figcaption class="attribution">— <a href="https://git-blame.blogspot.com/">Junio C Hamano</a>, <a
-              href="https://github.blog/2020-04-07-celebrating-15-years-of-git-an-interview-with-git-maintainer-junio-hamano/">Maintainer
-              of Git</a></figcaption>
-        </blockquote>
         <p>
           <strong>Also see more feedback on </strong><a
             href="https://twitter.com/rtyley/timelines/464727264345993216"><strong>Twitter...</strong></a>
         </p>
+
+
         <h1>Requirements</h1>
         <ul>
           <li>The <a href="https://www.java.com/en/download/manual.jsp">Java Runtime Environment</a> (<b>Java 8</b> or
@@ -252,20 +112,7 @@ $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
         <p>That's it - the Scala library and all other dependencies are folded into the <a class="latest-download-link"
             data-event-category="Requirements Link" href="#download">downloadable jar</a>.</p>
 
-        <h1 id="links">Links...</h1>
-        <ul>
-          <li><a
-              href="https://www.guardian.co.uk/info/developer-blog/2013/apr/29/rewrite-git-history-with-the-bfg">Rewriting
-              Git project history with The BFG</a> - a blogpost for The Guardian</li>
-          <li><a href="https://episodes.gitminutes.com/2013/04/gitminutes-06-roberto-tyley-on.html">GitMinutes</a>
-            podcast interview</li>
-          <li><a href="https://www.parleys.com/play/53a7d2d1e4b0543940d9e56b">Git Going Faster... with Scala</a> - talk
-            for ScalaDays 2014, later Parleys <em><a
-                href="https://twitter.com/Parleys/status/517319848331083776">Presentation of the Day</a></em></li>
-          <li><a href="https://www.infoq.com/articles/git-Cleaner">InfoQ interview</a></li>
-          <li><a href="https://stackoverflow.com/questions/tagged/git-rewrite-history">Questions tagged
-              <code>git-rewrite-history</code></a> on Stack Overflow</li>
-        </ul>
+       
 
         <h1>License</h1>
 
@@ -283,51 +130,43 @@ $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
       </section>
 
       <aside id="sidebar">
+
         <a id="download" class="button latest-download-link" data-event-category="Main download button"
           href="https://github.com/tawhidmonowar/WebCapture/releases">
           <small>Download</small>
-          <span class="latest-version">.jar file</span>
+          <span class="latest-version">v1.0.1</span>
         </a>
 
-        <p class="repo-owner"><a href="https://github.com/rtyley/bfg-repo-cleaner">The BFG</a> is by <a
-            href="https://github.com/rtyley">Roberto Tyley</a>, the author of <a
-            href="https://github.com/guardian/prout">Prout</a>, <a href="https://github.com/guardian/gu-who">gu:who</a>,
-          <a href="https://play.google.com/store/apps/details?id=com.madgag.agit">Agit</a> and the packager of <a
-            href="https://rtyley.github.io/spongycastle/">Spongy Castle</a>. <a
-            href="https://twitter.com/rtyley">Twitter</a> <a
-            href="https://plus.google.com/+RobertoTyley?rel=author">Google+</a> <a href="rtyley.gpg">PGP</a></p>
-        <p><a href="https://travis-ci.com/rtyley/bfg-repo-cleaner"><img
+        <p class="repo-owner">
+          Authored by
+          <a href="https://tawhidmonowar.github.io/profile/" target="_blank">Tawhid Monowar,</a> a Computer Science and Engineering Student.
+        </p>
+
+
+        <a style="background: transparent url(/githubpage/images/get-it-on-fdroid.png) ;" id="download" class="button latest-download-link" data-event-category="Main download button"
+        href="https://github.com/tawhidmonowar/WebCapture/releases">
+         </a>
+
+        <p class="repo-owner">
+          The app is available for download on F- Droid.
+        </p>
+        
+        <p>
+          <a href="https://travis-ci.com/rtyley/bfg-repo-cleaner"><img
               src="https://travis-ci.com/rtyley/bfg-repo-cleaner.svg?branch=master" alt="Build Status"></a></p>
-        <p><iframe src="https://github.com/sponsors/rtyley/button" title="Sponsor rtyley" height="35" width="116"
-            style="border: 0;"></iframe>
+        <p>
+          <a style="background: transparent url(/githubpage/images/buy-me-a-coffee.png) ;" id="download" class="button latest-download-link" data-event-category="Main download button"
+          href="https://github.com/tawhidmonowar/WebCapture/releases">
+           </a>
         <p>
 
 
-        <p>This page was generated by <a href="https://pages.github.com/">GitHub Pages</a> using the Architect theme by
-          <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
       </aside>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script>
-    var v = "1.14.0";
-    var u = "https://repo1.maven.org/maven2/com/madgag/bfg/" + v + "/bfg-" + v + ".jar"
-    $('.latest-version').text('v' + v);
-    $('.latest-download-link').prop("href", u).click(function (event) {
-      if (ga.hasOwnProperty('loaded') && ga.loaded === true) {
-        ga('send', 'event', {
-          'eventCategory': $(event.currentTarget).data("eventCategory"),
-          'eventAction': 'click',
-          'eventLabel': 'download',
-          'hitCallback': function () {
-            document.location = u;
-          }
-        });
-        return false;
-      }
-    });
-  </script>
+
 </body>
 
 </html>
