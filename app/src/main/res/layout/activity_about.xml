@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="URL to PDF Converter"
+                android:text="@string/app_name"
                 android:textColor="@color/grey_90"
                 android:textSize="25sp"
                 app:fontFamily="sans-serif-light" />
@@ -69,7 +69,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/about_str"
                 android:textColor="@color/grey_60"
-                android:textSize="13sp"/>
+                android:justificationMode="inter_word"
+                android:textSize="14sp"
+                android:lineHeight="20dp"/>
 
             <View
                 android:layout_width="0dp"
@@ -83,7 +85,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Last Update"
+                    android:text="@string/last_update_txt"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_90" />
 
@@ -173,7 +175,6 @@
                     android:text="@string/github"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_90"
-                    android:maxLines="1"
                     android:ellipsize="end"
                     android:autoLink="all"/>
 
