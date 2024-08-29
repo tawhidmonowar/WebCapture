@@ -6,8 +6,8 @@
     <string name="convert_webpage_to_pdf">Convert WebPage To PDF</string>
     <string name="enter_url_here">Enter URL here</string>
     <string name="email"><a href="mailto:tawhidmonowar@gmail.com">tawhidmonowar@gmail.com</a></string>
-    <string name="github"><a href="https://github.com/tawhidmonowar/URLtoPDFConverter">https://github.com/tawhidmonowar/URLtoPDFConverter</a></string>
-    <string name="about_str">URL to PDF Converter is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference.</string>
+    <string name="github"><a href="https://github.com/tawhidmonowar/WebCapture">www.github.com/tawhidmonowar/WebCapture</a></string>
+    <string name="about_str">WebCapture is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference.</string>
     <string name="enter_url_to_proceed">Enter URL to Proceed</string>
     <string name="e_g_url">E.g: https://www.example.com/blog?…</string>
     <string name="about">About</string>
@@ -19,4 +19,5 @@
     <string name="duckduckgo">DuckDuckGo</string>
     <string name="app_version">1.0.2</string>
     <string name="last_update">February 2024</string>
+    <string name="last_update_txt">Last Update</string>
 </resources>
