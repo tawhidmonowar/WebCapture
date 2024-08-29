@@ -228,7 +228,7 @@ form {
 } 
 
 #main-content h1:before {
-  content: "/";
+  content: "#";
   color: #9ddcff;
   padding-right: 0.3em;
   margin-left: -0.9em;
@@ -242,7 +242,7 @@ form {
   color: #474747;
 } 
 #main-content h2:before {
-  content: "//";
+  content: "#";
   color: #9ddcff;
   padding-right: 0.3em;
   margin-left: -1.5em;
@@ -484,4 +484,57 @@ em, i {
 
 .attribution {
   font-size: 70%;
+}
+
+. {
+  box-sizing: border-box;
+  margin: 0 ;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-bottom: 20px;
+}
+
+.preview-img {
+  padding: 0 20px 20px 20px;
+}
+.responsive-image {
+  max-width: 100%;
+}
+.cell img {
+  display: block;
+}
+@media screen and (min-width: 600px){
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width:50%;
+  }
+}
+@media screen and (min-width: 1000px){
+  .cell {
+    width:calc (100%/3);
+  }
+}
+.cell {
+  margin: 5px;
+  border: 5px solid #ddddddbf;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 600px){
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1000px){
+  .cell{
+    width: calc(33.3333% - 2rem);
+  }
 }
