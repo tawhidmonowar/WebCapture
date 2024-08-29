@@ -15,25 +15,8 @@
   <link rel="stylesheet" type="text/css" href="githubpage/stylesheets/pygment_trac.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="githubpage/stylesheets/print.css" media="print" />
 
-
   <title>WebCapture</title>
 
-  <script type="text/javascript">
-    if (("rtyley.github.io" == window.location.host) && (window.location.protocol != "https:"))
-      window.location.protocol = "https";
-  </script>
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-46290776-1', 'rtyley.github.io');
-    ga('send', 'pageview');
-
-  </script>
 </head>
 
 <body>
@@ -48,32 +31,59 @@
   <div id="content-wrapper">
     <div class="inner clearfix">
       <section id="main-content">
-        <pre><code>$ bfg --strip-blobs-bigger-than 100M --replace-text banned.txt repo.git
-</code></pre>
 
-        <h1>an alternative to git-filter-branch</h1>
-        <p>The BFG is a simpler, faster alternative to <a
-            href="https://git-scm.com/docs/git-filter-branch"><code>git-filter-branch</code></a> for cleansing bad data
-          out of your Git repository history:</p>
+        <p dir="auto"><a href="https://github.com/moneytoo/Player/releases/latest"><img src="https://camo.githubusercontent.com/67388c6d21cb6392b7566c1467b6d9e4d52fdc59c2346ea433fd777289bde5fa/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f6d6f6e6579746f6f2f506c617965722e7376673f6c6f676f3d676974687562266c6162656c3d4769744875622663616368655365636f6e64733d33363030" alt="GitHub release (latest SemVer)" data-canonical-src="https://img.shields.io/github/v/release/moneytoo/Player.svg?logo=github&amp;label=GitHub&amp;cacheSeconds=3600" style="max-width: 100%;"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.brouken.player" rel="nofollow"><img src="https://camo.githubusercontent.com/0a6a2f9ba6378c336df90b6aaed22ea1568f1386d051c07a760d8c025d83d86a/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f636f6c6f723d677265656e266c6f676f3d676f6f676c652d706c61792675726c3d6874747073253341253246253246706c61792e63757a692e776f726b6572732e646576253246706c617925334669253344636f6d2e62726f756b656e2e706c617965722532366c253344476f6f676c652532353230506c61792532366d2533447625323476657273696f6e" alt="Google Play" data-canonical-src="https://img.shields.io/endpoint?color=green&amp;logo=google-play&amp;url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.brouken.player%26l%3DGoogle%2520Play%26m%3Dv%24version" style="max-width: 100%;"></a>
+          <a href="https://f-droid.org/packages/com.brouken.player/" rel="nofollow"><img src="https://camo.githubusercontent.com/c9d9c2a3ea39d93d2190076563340fc5f5eed73577fc5b060f9b6494dd93de02/68747470733a2f2f696d672e736869656c64732e696f2f662d64726f69642f762f636f6d2e62726f756b656e2e706c617965722e7376673f6c6f676f3d662d64726f6964266c6162656c3d462d44726f69642663616368655365636f6e64733d33363030" alt="F-Droid" data-canonical-src="https://img.shields.io/f-droid/v/com.brouken.player.svg?logo=f-droid&amp;label=F-Droid&amp;cacheSeconds=3600" style="max-width: 100%;"></a>
+          <a href="https://github.com/moneytoo/Player/releases/latest"><img src="https://camo.githubusercontent.com/bfffd6eb0ceed5e30a699d06ed03a3acdc08a3ba7c682bdd234ef40f3edbbf3d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f6d6f6e6579746f6f2f506c617965722f746f74616c3f6c6f676f3d6769746875622663616368655365636f6e64733d33363030" alt="GitHub all releases" data-canonical-src="https://img.shields.io/github/downloads/moneytoo/Player/total?logo=github&amp;cacheSeconds=3600" style="max-width: 100%;"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.brouken.player" rel="nofollow"><img src="https://camo.githubusercontent.com/34a75f848ceb2b6bf2eb038cf2638849f6e59557f7acbea99e8bcb26a3aca55c/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f636f6c6f723d677265656e266c6f676f3d676f6f676c652d706c61792675726c3d6874747073253341253246253246706c61792e63757a692e776f726b6572732e646576253246706c617925334669253344636f6d2e62726f756b656e2e706c617965722532366c253344646f776e6c6f6164732532366d253344253234746f74616c696e7374616c6c73" alt="Google Play" data-canonical-src="https://img.shields.io/endpoint?color=green&amp;logo=google-play&amp;url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.brouken.player%26l%3Ddownloads%26m%3D%24totalinstalls" style="max-width: 100%;"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.brouken.player" rel="nofollow"><img src="https://camo.githubusercontent.com/05d0fe07352ff8f1d29943c62f6d463aefe0f0f142f6b540c499d8c75a545e00/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f636f6c6f723d677265656e266c6f676f3d676f6f676c652d706c61792675726c3d6874747073253341253246253246706c61792e63757a692e776f726b6572732e646576253246706c617925334669253344636f6d2e62726f756b656e2e706c617965722532366c253344726174696e672532366d2533442532354532253235393825323538352532353230253234726174696e67" alt="Google Play" data-canonical-src="https://img.shields.io/endpoint?color=green&amp;logo=google-play&amp;url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.brouken.player%26l%3Drating%26m%3D%25E2%2598%2585%2520%24rating" style="max-width: 100%;"></a>
+          <a href="https://github.com/androidx/media/releases/tag/1.4.1"><img src="https://camo.githubusercontent.com/cdc1c628d8a6d0ae76bb88f24f547cdfeea0286b0bf4ae651ab844f3efcaac1b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d65646961332d312e342e312d3030376563363f63616368655365636f6e64733d33363030" alt="Media3" data-canonical-src="https://img.shields.io/badge/Media3-1.4.1-007ec6?cacheSeconds=3600" style="max-width: 100%;"></a>
+          <a href="https://hosted.weblate.org/engage/just-player/" rel="nofollow"><img src="https://camo.githubusercontent.com/a2448d1744eba2b6bfcd2ee85d5bf3c07eabacb22b3b478bf9ebefc933731d3b/68747470733a2f2f696d672e736869656c64732e696f2f7765626c6174652f70726f67726573732f6a7573742d706c617965723f6c6f676f3d7765626c617465266c6f676f436f6c6f723d77686974652663616368655365636f6e64733d3336303030" alt="Weblate project translated" data-canonical-src="https://img.shields.io/weblate/progress/just-player?logo=weblate&amp;logoColor=white&amp;cacheSeconds=36000" style="max-width: 100%;"></a>
 
+          <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/856ced7b0c10a53cac50b7a0ec418f8accf6a99eb465a7e4e37d59d82aa6164c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572"><img src="https://camo.githubusercontent.com/856ced7b0c10a53cac50b7a0ec418f8accf6a99eb465a7e4e37d59d82aa6164c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572" alt="License" data-canonical-src="https://img.shields.io/github/license/iknow4/Android-Video-Trimmer" style="max-width: 100%;"></a>
+            <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2eb7bebe12586a06c120fa575a5e2e51f351a34eaa8270f8f7e9e922734ac7bf/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572"><img src="https://camo.githubusercontent.com/2eb7bebe12586a06c120fa575a5e2e51f351a34eaa8270f8f7e9e922734ac7bf/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572" alt="Stars" data-canonical-src="https://img.shields.io/github/stars/iknow4/Android-Video-Trimmer" style="max-width: 100%;"></a>
+            <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d2728f4f2f03343722f6674e35a1c6bd0bcd8ada658b571807e472eb15844592/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572"><img src="https://camo.githubusercontent.com/d2728f4f2f03343722f6674e35a1c6bd0bcd8ada658b571807e472eb15844592/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f696b6e6f77342f416e64726f69642d566964656f2d5472696d6d6572" alt="Forks" data-canonical-src="https://img.shields.io/github/forks/iknow4/Android-Video-Trimmer" style="max-width: 100%;"></a>
+
+            <a href="https://travis-ci.org/Swati4star/Images-to-PDF" rel="nofollow"><img src="https://camo.githubusercontent.com/71cc401cb090d19c18fbaf0648485f838d523d217c360651e949c947783ab520/68747470733a2f2f7472617669732d63692e6f72672f537761746934737461722f496d616765732d746f2d5044462e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/Swati4star/Images-to-PDF.svg?branch=master" style="max-width: 100%;"></a>
+              <a href="https://codeclimate.com/github/Swati4star/Images-to-PDF" rel="nofollow"><img src="https://camo.githubusercontent.com/9b96e63904e84b5bc68114903830f2274b3016e3084aa308db306e02c73eed4f/68747470733a2f2f636f6465636c696d6174652e636f6d2f6769746875622f537761746934737461722f496d616765732d746f2d5044462e737667" alt="Code Climate" data-canonical-src="https://codeclimate.com/github/Swati4star/Images-to-PDF.svg" style="max-width: 100%;"></a>
+              <a href="https://android-arsenal.com/details/3/7132" rel="nofollow"><img src="https://camo.githubusercontent.com/862e386f0fb48be4d3b38b2ac0300b368c53e4cb1b03c2a5501da5acf6c5ddc6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f416e64726f6964253230417273656e616c2d504446253230436f6e7665727465722d626c75652e7376673f7374796c653d74727565" alt="Android Arsenal" data-canonical-src="https://img.shields.io/badge/Android%20Arsenal-PDF%20Converter-blue.svg?style=true" style="max-width: 100%;"></a>
+
+             <a href="https://github.com/gsantner/memetastic/releases"><img src="https://camo.githubusercontent.com/1dc1768b023724a054cb61ab227e7670c323fa7f880f20b307ad1e541fa4e15c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7461672f6773616e746e65722f6d656d657461737469632e737667" alt="GitHub releases" data-canonical-src="https://img.shields.io/github/tag/gsantner/memetastic.svg" style="max-width: 100%;"></a>
+                <a href="https://github.com/gsantner/memetastic/releases"><img src="https://camo.githubusercontent.com/46011f50ce625491c76612e2959137267c6ee7db79b4cac89ecb1c33b23a9bf8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f6773616e746e65722f6d656d657461737469632f746f74616c2e7376673f6c6f676f3d676974687562266c6f676f436f6c6f723d6c696d65" alt="GitHub downloads" data-canonical-src="https://img.shields.io/github/downloads/gsantner/memetastic/total.svg?logo=github&amp;logoColor=lime" style="max-width: 100%;"></a>
+                <a href="https://matrix.to/#/#memetastic:matrix.org" rel="nofollow"><img src="https://camo.githubusercontent.com/40d4814f2af6f86eebc2de02fd27d282371279e3576f2a5822c57f48253d6d03/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d6d61747269782d626c75652e737667" alt="Chat on Matrix" data-canonical-src="https://img.shields.io/badge/chat-matrix-blue.svg" style="max-width: 100%;"></a>
+                <a href="https://github.com/gsantner/memetastic/actions"><img src="https://github.com/gsantner/memetastic/workflows/CI/badge.svg" alt="GitHub CI" style="max-width: 100%;"></a>
+
+        <a href="https://hosted.weblate.org/engage/libretorrent/" rel="nofollow"><img src="https://camo.githubusercontent.com/d4b6d6794ee9ab405eedd326ec634aa82f72bb278ca392f003c3218e9679fc9d/68747470733a2f2f686f737465642e7765626c6174652e6f72672f776964676574732f6c69627265746f7272656e742f2d2f7376672d62616467652e737667" alt="Hosted Weblate" data-canonical-src="https://hosted.weblate.org/widgets/libretorrent/-/svg-badge.svg" style="max-width: 100%;"></a>
+          <a href="https://matrix.to/#libretorrent:matrix.org" rel="nofollow"><img src="https://camo.githubusercontent.com/7c8223701567dfeb95ce21274489d484bf892d1ab9c430d75b6ebaf2d9ca3d7e/68747470733a2f2f696d672e736869656c64732e696f2f6d61747269782f6c69627265746f7272656e743a6d61747269782e6f72673f6c6162656c3d4d6174726978253230526f6f6d" alt="Matrix Room" data-canonical-src="https://img.shields.io/matrix/libretorrent:matrix.org?label=Matrix%20Room" style="max-width: 100%;"></a>
+          <a href="https://t.me/LibreTorrent" rel="nofollow"><img src="https://camo.githubusercontent.com/51529c438ca6a0c57af9b2784e1b4f78e05751699a529a700055c653f4a36f4b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d54656c656772616d2d626c75652e737667" alt="Chat - Telegram" data-canonical-src="https://img.shields.io/badge/chat-Telegram-blue.svg" style="max-width: 100%;"></a>
+          <a href="https://scan.coverity.com/projects/proninyaroslav-libretorrent" rel="nofollow"><img alt="Coverity Scan Build Status" src="https://camo.githubusercontent.com/f0ef6bc5e628f5a62b4f59ce7a23965836117104c07176d518c7a217a48711d5/68747470733a2f2f7363616e2e636f7665726974792e636f6d2f70726f6a656374732f31343432312f62616467652e737667" data-canonical-src="https://scan.coverity.com/projects/14421/badge.svg" style="max-width: 100%;"></a></p>
+        <!--<pre><code>$ bfg --strip-blobs-bigger-than 100M --replace-text banned.txt repo.git
+</code></pre>-->
+
+<div class="preview-img">
+  <img src="https://github.com/tawhidmonowar/WebCapture/raw/main/screenshot/screenshot.png">
+</div>
+              
+        
+       
+
+        <h2>Description</h2>
+        <p>URL to PDF Converter is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference. </p>
+        
+        <h2>Features</h2>
         <ul>
-          <li>Removing <strong>Crazy Big Files</strong></li>
-          <li>Removing <strong>Passwords</strong>, <strong>Credentials</strong> &amp; other <strong>Private
-              data</strong></li>
+              <li>Convert any <strong>URL into a PDF </strong> file.</li>
+                <li>Save PDF files to device storage or share with other apps.</li>
+                  <li>Simple and easy-to-use interface.</li>
+                    <li>Fast and reliable conversion process.</li>
+                      <li>Open-source and free to use.</li>
+
         </ul>
 
-        <p>The <code>git-filter-branch</code> command is enormously powerful and can do things that the BFG can't - but
-          the BFG is <em>much</em> better for the tasks above, because:</p>
+        
 
-        <ul>
-          <li><a href="#speed">Faster</a> : <strong>10 - 720x</strong> faster</li>
-          <li><a href="#examples">Simpler</a> : The BFG isn't particularily clever, but <em>is</em> focused on making
-            the above tasks easy</li>
-          <li>Beautiful : If you need to, you can use the beautiful Scala language to customise the BFG. Which has got
-            to be better than Bash scripting at least some of the time.</li>
-        </ul>
-
-
+<!--
         <h1 id="speed">Faster...</h1>
         <p>The BFG is <a
             href="https://docs.google.com/spreadsheet/ccc?key=0AsR1d5Zpes8HdER3VGU1a3dOcmVHMmtzT2dsS2xNenc">10 -
@@ -86,46 +96,58 @@
         &nbsp;
         <p>BFG's performance advantage is due to these factors:</p>
 
-
-        <h1 id="feedback">Feedback</h1>
+        <h2 id="feedback">Feedback</h2>
         <blockquote>
-          I tried deleting using several "how to" blog entries for git filter-branch, but wasn't successful. Then tried
+         <p>I tried deleting using several "how to" blog entries for git filter-branch, but wasn't successful. Then tried
           The BFG; worked like a champ - very cool tool!
           <figcaption class="attribution">— <a href="https://linkedin.com/in/billh">Bill Hunt</a>, CTO at OptTown
-          </figcaption>
+          </figcaption></p> 
         </blockquote>
         &nbsp;
-        <p>
-          <strong>Also see more feedback on </strong><a
-            href="https://twitter.com/rtyley/timelines/464727264345993216"><strong>Twitter...</strong></a>
-        </p>
+
+-->
+
+          <h2>Screenshots</h2>
+            <div class="container">
+              <div class="grid">
+                <div class="cell">
+                  <img src="https://mobileapplandingpage.learn.uno/assets/images/screenshots/4.png" class="responsive-image">
+                </div>
+                <div class="cell">
+                  <img src="https://mobileapplandingpage.learn.uno/assets/images/screenshots/4.png" class="responsive-image">
+                </div>
+                <div class="cell">
+                  <img src="https://mobileapplandingpage.learn.uno/assets/images/screenshots/4.png" class="responsive-image">
+                </div>
+              </div>
+            </div>
 
 
-        <h1>Requirements</h1>
-        <ul>
-          <li>The <a href="https://www.java.com/en/download/manual.jsp">Java Runtime Environment</a> (<b>Java 8</b> or
-            above - BFG <a href="https://repo1.maven.org/maven2/com/madgag/bfg/1.12.16/bfg-1.12.16.jar">v1.12.16</a> was
-            the last version to support Java 7, <a
-              href="https://repo1.maven.org/maven2/com/madgag/bfg/1.12.3/bfg-1.12.3.jar">v1.12.3</a> was the last
-            version to support Java 6)</li>
-        </ul>
-        <p>That's it - the Scala library and all other dependencies are folded into the <a class="latest-download-link"
-            data-event-category="Requirements Link" href="#download">downloadable jar</a>.</p>
+        <h2>License</h2>
+        <div class="plain"><pre>
+MIT License
 
-       
+Copyright (c) 2024 Tawhid Monowar
+          
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-        <h1>License</h1>
-
-        <p>The BFG is free software: you can redistribute it and/or modify
-          it under the terms of the <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a> as
-          published by
-          the Free Software Foundation, either version 3 of the License, or
-          (at your option) any later version.</p>
-
-        <p>The BFG is distributed in the hope that it will be useful,
-          but WITHOUT ANY WARRANTY; without even the implied warranty of
-          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-          GNU General Public License for more details.</p>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+          
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre>
+</div>
 
       </section>
 
@@ -138,7 +160,7 @@
         </a>
 
         <p class="repo-owner">
-          Authored by
+          Developed by
           <a href="https://tawhidmonowar.github.io/profile/" target="_blank">Tawhid Monowar,</a> a Computer Science and Engineering Student.
         </p>
 
