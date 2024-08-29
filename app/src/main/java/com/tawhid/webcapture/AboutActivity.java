@@ -14,18 +14,20 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.util.Objects;
+
 public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme2);
+        setTheme(R.style.AboutTheme);
         setContentView(R.layout.activity_about);
         initToolbar();
     }
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("About");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("About");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
