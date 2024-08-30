@@ -1,25 +1,25 @@
 package com.tawhid.webcapture;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintJob;
 import android.print.PrintManager;
 import android.view.View;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -42,8 +42,8 @@ public class PDFActivity extends AppCompatActivity {
             relativeLayout.setVisibility(View.VISIBLE);
 
         } else {
-            ImageView imageView = findViewById(R.id.no_internet_img);
-            imageView.setVisibility(View.VISIBLE);
+            LinearLayout no_internet_layout = findViewById(R.id.no_internet_layout);
+            no_internet_layout.setVisibility(View.VISIBLE);
         }
 
 
@@ -63,6 +63,18 @@ public class PDFActivity extends AppCompatActivity {
                 // Hide the ProgressBar when the web page finishes loading
                 progressBar.setVisibility(View.GONE);
             }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                LinearLayout not_available_layout = findViewById(R.id.not_available_layout);
+                // If internet is connected but webpage not available
+                if(InternetCheck.isConnected(PDFActivity.this)) {
+                    not_available_layout.setVisibility(View.VISIBLE);
+                } else {
+                    LinearLayout no_internet_layout = findViewById(R.id.no_internet_layout);
+                    no_internet_layout.setVisibility(View.VISIBLE);
+                }
+            }
         });
 
         webView.getSettings().setJavaScriptEnabled(true);
@@ -80,12 +92,8 @@ public class PDFActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (printWeb != null) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        // Call createWebPrintJob() to start printing
-                        PrintTheWebPage(printWeb);
-                    } else {
-                        showSnackbar("Not available for devices below Android Lollipop");
-                    }
+                    // Call createWebPrintJob() to start printing
+                    PrintTheWebPage(printWeb);
                 } else {
                     showSnackbar("Web page not loaded");
                 }
@@ -97,7 +105,6 @@ public class PDFActivity extends AppCompatActivity {
     PrintJob printJob;
     boolean printBtnPressed = false;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void PrintTheWebPage(WebView webView) {
         // Set printBtnPressed to true
         printBtnPressed = true;
