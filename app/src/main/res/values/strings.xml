@@ -23,4 +23,7 @@
     <string name="version_str">Version</string>
     <string name="contact_str">Contact</string>
     <string name="github_str">Github</string>
+    <string name="webpage_not_available">The webpage is not available!</string>
+    <string name="try_again">Try again</string>
+    <string name="no_internet">No Internet Connection!</string>
 </resources>
