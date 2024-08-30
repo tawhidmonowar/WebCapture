@@ -17,7 +17,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,10 +30,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:visibility="visible"
                 app:cardCornerRadius="2dp"
@@ -49,8 +46,8 @@
                         android:layout_height="wrap_content"
                         android:padding="7dp"
                         android:text="@string/enter_url_to_proceed"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                        android:textColor="@color/grey_60" />
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -68,7 +65,8 @@
                         android:maxLines="1"
                         android:padding="10dp"
                         android:textColor="@color/grey_60"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        app:fontFamily="sans-serif-light"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -108,8 +106,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/paste"
-                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                    android:textColor="@color/grey_60" />
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                                    android:textColor="@color/black" />
 
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -140,8 +138,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/go"
-                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                    android:textColor="@color/grey_60" />
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                                    android:textColor="@color/black" />
 
                             </LinearLayout>
 
@@ -174,8 +172,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/clear"
-                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                                    android:textColor="@color/grey_60" />
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                                    android:textColor="@color/black" />
 
                             </LinearLayout>
 
@@ -238,18 +236,20 @@
                             android:orientation="horizontal"
                             android:padding="10dp">
 
-                            <ImageButton
+                            <ImageView
                                 android:layout_width="26dp"
                                 android:layout_height="26dp"
                                 android:background="@color/white"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/duckduckgo"
-                                android:contentDescription="@string/duckduckgo" />
+                                android:contentDescription="@string/duckduckgo"
+                                android:layout_margin="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/duckduckgo" />
+                                android:text="@string/duckduckgo"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -278,7 +278,7 @@
                             android:orientation="horizontal"
                             android:padding="8dp">
 
-                            <ImageButton
+                            <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:background="@color/white"
@@ -289,7 +289,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/google" />
+                                android:text="@string/google"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp"/>
 
                         </LinearLayout>
 
@@ -318,17 +320,19 @@
                             android:orientation="horizontal"
                             android:padding="8dp">
 
-                            <ImageButton
+                            <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:background="@color/white"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/bing" />
+                                android:src="@drawable/bing"
+                                android:layout_margin="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/bing" />
+                                android:text="@string/bing"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
