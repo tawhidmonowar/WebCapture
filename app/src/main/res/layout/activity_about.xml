@@ -49,8 +49,15 @@
                 android:textSize="25sp"
                 app:fontFamily="sans-serif-light"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Developed by Tawhid Monowar"
+                android:textColor="@color/grey_90"
+                app:fontFamily="sans-serif-light"/>
+
             <View
-                android:layout_width="160dp"
+                android:layout_width="220dp"
                 android:layout_height="3dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
