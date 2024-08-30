@@ -64,6 +64,8 @@ public class PDFActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
 
+
+
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 LinearLayout not_available_layout = findViewById(R.id.not_available_layout);
@@ -113,15 +115,14 @@ public class PDFActivity extends AppCompatActivity {
         PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
 
         // Set the name of the print job
-        String tempName = "(url to pdf)" + webView.getUrl();
-        String jobName = tempName.replace("https://.", " ");
+        String pdfName = "(WebCapture) " + webView.getTitle();
 
         // Create PrintDocumentAdapter instance
-        PrintDocumentAdapter printAdapter = webView.createPrintDocumentAdapter(jobName);
+        PrintDocumentAdapter printAdapter = webView.createPrintDocumentAdapter(pdfName);
 
         // Create a print job with name and adapter instance
         assert printManager != null;
-        printJob = printManager.print(jobName, printAdapter, new PrintAttributes.Builder().build());
+        printJob = printManager.print(pdfName, printAdapter, new PrintAttributes.Builder().build());
     }
 
     @Override
