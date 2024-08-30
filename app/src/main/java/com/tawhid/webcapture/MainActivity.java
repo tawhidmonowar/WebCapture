@@ -22,13 +22,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText input_url;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-            Toast.makeText(this, "URl is Invalid!", Toast.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content), "URl is Invalid!", Snackbar.LENGTH_SHORT).show();
         }
     }
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         // Check if there is any text on the clipboard
         if (clipboardManager.hasPrimaryClip()) {
             // Get the text from the clipboard
-            ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
+            ClipData.Item item = Objects.requireNonNull(clipboardManager.getPrimaryClip()).getItemAt(0);
             CharSequence text = item.getText();
 
             // Check if the text is not null and not empty
