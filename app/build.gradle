@@ -7,12 +7,12 @@ android {
     lintOptions {
         checkReleaseBuilds false
     }
-
     compileSdk 33
+
 
     defaultConfig {
         applicationId 'com.tawhid.webcapture'
-        minSdk 19
+        minSdk 23
         targetSdk 33
         versionCode 3
         versionName '1.0.2'
