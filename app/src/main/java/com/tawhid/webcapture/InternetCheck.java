@@ -12,11 +12,8 @@ public class InternetCheck {
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
-    public static void doSomethingWhenConnected(PDFActivity context) {
-        // Perform your actions when there's internet connection
-    }
-
-    public static void doSomethingWhenDisconnected(PDFActivity context) {
+    public static boolean internetDisconnected(PDFActivity context) {
         // Perform your actions when there's no internet connection
+        return false;
     }
 }
