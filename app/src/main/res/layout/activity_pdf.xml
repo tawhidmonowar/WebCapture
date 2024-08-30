@@ -33,20 +33,63 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="gone" />
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
 
-    <ImageView
-        android:id="@+id/no_internet_img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:scaleType="fitCenter"
-        android:src="@drawable/no_internet_connection"
-        android:visibility="gone"
-        app:tint="@color/grey_40" />
+    <LinearLayout
+        android:id="@+id/no_internet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_internet_connection"
+            app:tint="@color/grey_40"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/not_available_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_cloud_off_24"
+            android:visibility="visible"
+            app:tint="@color/grey_60"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/webpage_not_available"
+            android:textSize="15sp"/>
+
+
+    </LinearLayout>
 
 </RelativeLayout>
