@@ -19,7 +19,7 @@
             android:name=".PDFActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AboutTheme" />
         <activity
             android:name=".AboutActivity"
             android:exported="true"
@@ -28,7 +28,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="URL to PDF Converter"
+            android:label="WebCapture"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
