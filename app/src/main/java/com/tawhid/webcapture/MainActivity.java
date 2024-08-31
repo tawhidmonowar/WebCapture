@@ -3,25 +3,37 @@ package com.tawhid.webcapture;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,12 +41,28 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
 
     EditText input_url;
+    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
+
         input_url = findViewById(R.id.input_url);
+
+        recyclerView = findViewById(R.id.pdfList);
+
+        // Check for MANAGE_EXTERNAL_STORAGE permission
+        if (hasManageExternalStoragePermission()) {
+            recyclerView.setAdapter(new AdapterClass(this, pdfFiles()));
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                requestManageExternalStoragePermission();
+            }
+        }
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
         String action = intent.getAction();
@@ -44,10 +72,11 @@ public class MainActivity extends AppCompatActivity {
             if ("text/plain".equals(type)) {
                 String sharedURL = intent.getStringExtra(Intent.EXTRA_TEXT);
                 if (sharedURL != null) {
-                    input_url.setText(sharedURL);
+                    startPrinting(sharedURL);
                 }
             }
         }
+
 
         // go button
         LinearLayout goButton = findViewById(R.id.go_button);
@@ -101,6 +130,75 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private boolean hasManageExternalStoragePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            return Environment.isExternalStorageManager();
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.R)
+    private void requestManageExternalStoragePermission() {
+        Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+        startActivityForResult(intent, 1);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if (hasManageExternalStoragePermission()) {
+                recyclerView.setAdapter(new AdapterClass(this, pdfFiles()));
+            } else {
+                Toast.makeText(this, "Permission not granted. Unable to access files.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private ArrayList<String> pdfFiles(){
+        ContentResolver contentResolver = getContentResolver();
+
+        String mime = MediaStore.Files.FileColumns.MIME_TYPE + "=?";
+        String memeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension("pdf");
+        String[] args = new String[]{memeType};
+        String[] proj = {MediaStore.Files.FileColumns.DATA,MediaStore.Files.FileColumns.DISPLAY_NAME};
+        String sortingOrder = MediaStore.Files.FileColumns.DATE_ADDED + " DESC";
+        Cursor cursor = contentResolver.query(MediaStore.Files.getContentUri("external")
+                ,proj, mime,args,sortingOrder);
+        ArrayList<String> pdfFiles = new ArrayList<>();
+        if (cursor !=  null){
+            while (cursor.moveToNext()){
+                int index = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATA);
+
+                String path = cursor.getString(index);
+                pdfFiles.add(path);
+            }
+            cursor.close();
+        }
+        return pdfFiles;
+    }
+
+
+
+
+
+
+
     public void startPrinting(String url) {
         if (isUrl(url)) {
             Intent intent = new Intent(MainActivity.this, PDFActivity.class);
@@ -111,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(findViewById(android.R.id.content), "URl is Invalid!", Snackbar.LENGTH_SHORT).show();
         }
     }
-
 
     public static boolean isUrl(String input) {
         final String URL_REGEX = "^((https?|ftp)://|(www|ftp)\\.)?[a-z0-9-]+(\\.[a-z0-9-]+)+([/?].*)?$";
