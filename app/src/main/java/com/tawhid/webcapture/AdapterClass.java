@@ -34,7 +34,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.AdapterViewh
     @Override
     public AdapterViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.viewfiles_layout,parent,false);
+        View v = inflater.inflate(R.layout.pdf_files_design,parent,false);
         return new AdapterViewholder(v);
     }
 
