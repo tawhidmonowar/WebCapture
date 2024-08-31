@@ -5,15 +5,15 @@
     WebCapture is an open source Android application that allows users to convert any web page into a PDF file. With this app, users can easily save web pages for offline reading, share web pages as PDF files, or simply keep a copy of important web pages for future reference.
     <br/>
     <br/>
-    <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/releases">Download</a>
+    <a href="https://github.com/tawhidmonowar/WebCapture/releases">Download</a>
     .
-    <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/issues">Report Bug</a>
+    <a href="https://github.com/tawhidmonowar/WebCapture/issues">Report Bug</a>
     .
-    <a href="https://github.com/tawhidmonowar/URLtoPDFConverter/issues">Request Feature</a>
+    <a href="https://github.com/tawhidmonowar/WebCapture/issues">Request Feature</a>
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/URLtoPDFConverter?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/URLtoPDFConverter?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/URLtoPDFConverter?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/URLtoPDFConverter) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
+![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/WebCapture?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/WebCapture?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/WebCapture?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/WebCapture) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
 
 ![screenshot_profile](./screenshot/screenshot.png)
 
@@ -24,26 +24,31 @@
 - Fast and reliable conversion process.
 - Open-source and free to use.
 
-## Support Us
+## Support Me
 
 <a href="https://www.buymeacoffee.com/tawhidmonowar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"></a>
 
-## Download
-
-The app is available for download on F-Droid.
-
-<a href="https://f-droid.org/packages/com.prostudio.urltopdfconverter/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
-
-## Prerequisites
-- Android Studio (Version 4.1 or later).
-- Gradle (Version 6.5 or later).
-- Java Development Kit (JDK) (Version 11 or later).
+## To-Do
+- [x] URL Validation
+- [x] No Internet Connection Message
+- [x] URL Paste & Clear Buttons
+- [x] Search Engine Buttons
+- [x] Splash Screen
+- [x] About Activity
+- [x] App Exit Confirmation Dialogue
+- [x] PDF Reader
+- [ ] Theme Selection
+- [ ] Swap Refresh
+- [ ] Long Screenshots
+- [ ] Progress Bar in WebView
+- [ ] Save History
+- [ ] PDF Search Option
 
 ## Installation
 
 1. Clone the repository:
 ```
-git clone https://github.com/tawhidmonowar/URLtoPDFConverter.git
+git clone https://github.com/tawhidmonowar/WebCapture.git
 ```
 2. Open the project in Android Studio.
 3. Build and run the project using Gradle.
@@ -56,7 +61,7 @@ To convert a URL into a PDF file:
 4. Save the PDF file to device storage.
 
 ## Contributing
-Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/URLtoPDFConverter/issues). If you would like to contribute code, please fork the repository and create a pull request.
+Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/WebCapture/issues). If you would like to contribute code, please fork the repository and create a pull request.
 
 ## Save Palestine
 Stand up for Palestine's existence! It is disappearing from Maps, let us raise our voices and demand a fair representation for this land and its people.
