@@ -15,11 +15,12 @@
 
 ![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/WebCapture?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/WebCapture?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/WebCapture?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/WebCapture) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
 
-![screenshot_profile](./screenshot/screenshot.png)
+![screenshot](./githubpage/images/screenshot.png)
 
 ## Features
 - Convert any URL into a PDF file.
 - Save PDF files to device storage or share with other apps.
+- Open PDF inside the app (PDF Reader)
 - Simple and easy-to-use interface.
 - Fast and reliable conversion process.
 - Open-source and free to use.
