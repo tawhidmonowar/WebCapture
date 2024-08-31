@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,18 +29,14 @@ public class AboutActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle("About");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.grey_5));
-        }
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(this.getResources().getColor(R.color.grey_5));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            View view = this.findViewById(android.R.id.content);
-            int flags = view.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            view.setSystemUiVisibility(flags);
-        }
+        View view = this.findViewById(android.R.id.content);
+        int flags = view.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+        view.setSystemUiVisibility(flags);
     }
 
     @Override
