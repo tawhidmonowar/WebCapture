@@ -158,18 +158,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     private ArrayList<String> pdfFiles(){
         ContentResolver contentResolver = getContentResolver();
 
@@ -194,14 +182,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     public void startPrinting(String url) {
         if (isUrl(url)) {
-            Intent intent = new Intent(MainActivity.this, PDFActivity.class);
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
             intent.putExtra("input-url", url);
             startActivity(intent);
         }

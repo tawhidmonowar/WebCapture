@@ -1,17 +1,15 @@
 package com.tawhid.webcapture;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.github.barteksc.pdfviewer.PDFView;
-
+import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import java.io.File;
-import java.io.IOException;
 
 public class PDF_ViewActivity extends AppCompatActivity {
 
@@ -38,7 +36,23 @@ public class PDF_ViewActivity extends AppCompatActivity {
                 .defaultPage(0)
                 .enableAnnotationRendering(true) // render annotations (such as comments, colors or forms)
                 .password(null)
-                .scrollHandle(null)
+                .scrollHandle(new DefaultScrollHandle(this))
                 .load();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.about_menu) {
+            Intent intent = new Intent(PDF_ViewActivity.this, AboutActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onContextItemSelected(item);
     }
 }
