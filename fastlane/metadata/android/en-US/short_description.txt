@@ -1,1 +1,1 @@
-URL to PDF Converter allows users to convert any web page into a PDF file. 
+WebCapture allows users to convert any web page into a PDF file.
