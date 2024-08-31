@@ -15,18 +15,21 @@
 
 ![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/WebCapture?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/WebCapture?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/WebCapture?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/WebCapture) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
 
-![screenshot_profile](./screenshot/screenshot.png)
+![screenshot](./githubpage/images/screenshot.jpg)
 
 ## Features
 - Convert any URL into a PDF file.
 - Save PDF files to device storage or share with other apps.
+- Open PDF inside the app (PDF Reader)
 - Simple and easy-to-use interface.
 - Fast and reliable conversion process.
 - Open-source and free to use.
 
 ## Support Me
 
-<a href="https://www.buymeacoffee.com/tawhidmonowar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"></a>
+<a href="https://www.buymeacoffee.com/tawhidmonowar" target="_blank">
+  <img src="./githubpage/images/buy-me-a-coffee.gif" alt="Buy Me A Coffee" style="max-width: 100%; height: auto;">
+</a>
 
 ## To-Do
 - [x] URL Validation
