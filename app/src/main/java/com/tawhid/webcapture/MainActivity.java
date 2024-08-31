@@ -1,12 +1,15 @@
 package com.tawhid.webcapture;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,6 +31,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText input_url;
     RecyclerView recyclerView;
+
+    private static final int REQUEST_CODE_MANAGE_STORAGE = 1;
+    private static final int REQUEST_CODE_EXTERNAL_STORAGE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 requestManageExternalStoragePermission();
+            } else {
+                requestExternalStoragePermissions();
             }
         }
 
@@ -137,12 +147,39 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.R)
+
     private void requestManageExternalStoragePermission() {
-        Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-        startActivityForResult(intent, 1);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                    intent.setData(Uri.parse("package:" + getPackageName()));
+                    startActivityForResult(intent, 1);
+                } catch (Exception e) {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivityForResult(intent, 1);
+                }
+            } else {
+                Toast.makeText(this, "Permission already granted", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
+    private void requestExternalStoragePermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+            // Requesting the permissions
+            ActivityCompat.requestPermissions(this,
+                    new String[]{
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    },
+                    REQUEST_CODE_EXTERNAL_STORAGE);
+        } else {
+            Toast.makeText(this, "External Storage permissions already granted", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent data) {
@@ -156,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
     private ArrayList<String> pdfFiles(){
         ContentResolver contentResolver = getContentResolver();
