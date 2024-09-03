@@ -4,16 +4,86 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.prostudio.urltopdfconverter",
+  "applicationId": "com.tawhid.webcapture",
   "variantName": "release",
   "elements": [
     {
-      "type": "SINGLE",
-      "filters": [],
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
       "attributes": [],
-      "versionCode": 3,
+      "versionCode": 6003,
       "versionName": "1.0.2",
-      "outputFile": "app-release.apk"
+      "outputFile": "app-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 3003,
+      "versionName": "1.0.2",
+      "outputFile": "app-arm64-v8a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 1003,
+      "versionName": "1.0.2",
+      "outputFile": "app-armeabi-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 2003,
+      "versionName": "1.0.2",
+      "outputFile": "app-armeabi-v7a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "mips"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 4003,
+      "versionName": "1.0.2",
+      "outputFile": "app-mips-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 5003,
+      "versionName": "1.0.2",
+      "outputFile": "app-x86-release.apk"
     }
   ],
   "elementType": "File"
