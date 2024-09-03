@@ -19,6 +19,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86_64', 'x86', 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'mips'
+            universalApk false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,6 +39,19 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     namespace 'com.tawhid.webcapture'
+}
+
+
+ext.versionCodes = ['armeabi': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, mips: 4, 'x86': 5, 'x86_64': 6]
+import com.android.build.OutputFile
+// For each APK output variant, override versionCode with a combination of
+// ABI APK value * 1000 + defaultConfig.versionCode
+android.applicationVariants.all { variant ->
+    // assign different version code for each output
+    variant.outputs.each { output ->
+        output.versionCodeOverride =
+                project.ext.versionCodes.get(output.getFilter(OutputFile.ABI)) * 1000 + android.defaultConfig.versionCode
+    }
 }
 
 dependencies {
