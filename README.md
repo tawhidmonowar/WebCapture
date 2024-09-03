@@ -46,6 +46,7 @@
 - [ ] Progress Bar in WebView
 - [ ] Save History
 - [ ] PDF Search Option
+- [ ] Translation 
 
 ## Installation
 
