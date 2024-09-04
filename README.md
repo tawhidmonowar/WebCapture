@@ -18,7 +18,7 @@
 ![screenshot](./githubpage/images/screenshot.jpg)
 
 ## Features
-- Convert any URL into a PDF file.
+- Convert any Web Page into PDF file.
 - Save PDF files to device storage or share with other apps.
 - Open PDF inside the app (PDF Reader)
 - Simple and easy-to-use interface.
@@ -58,7 +58,7 @@ git clone https://github.com/tawhidmonowar/WebCapture.git
 3. Build and run the project using Gradle.
 
 ## Usage
-To convert a URL into a PDF file:
+To convert a Web Page into PDF file:
 1. Enter the URL in the input field.
 2. Press the "Convert" button.
 3. Wait for the conversion process to complete.
