@@ -47,6 +47,7 @@
 - [ ] Save History
 - [ ] PDF Search Option
 - [ ] Translation 
+- [ ] Night Mood
 
 ## Installation
 
