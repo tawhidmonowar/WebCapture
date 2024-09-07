@@ -68,34 +68,7 @@ To convert a Web Page into PDF file:
 4. Save the PDF file to device storage.
 
 ## Contributing
-Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/WebCapture/issues). If you would like to contribute code, please fork the repository and create a pull request. Special thanks these wonderful people (contributors) for their valuable efforts.
-<table>
-    <tbody>
-        <tr>
-        <td align="center">
-            <a href="https://github.com/tawhidmonowar">
-                <img src="https://avatars.githubusercontent.com/u/82754463?v=4" width="50px;"/>
-                <br />
-                <sub><b>Tawhid Monowar</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/raja-chaudhary">
-                <img src="https://avatars.githubusercontent.com/u/90987722?v=4" width="50px;"/>
-                <br />
-                <sub><b>Raja Chaudhary</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/FarhanIbneQuddus">
-                <img src="https://avatars.githubusercontent.com/u/60668015?v=4" width="50px;"/>
-                <br />
-                <sub><b>Farhan Ibne Quddus</b></sub>
-            </a>
-        </td>
-      </tr>
-    </tbody>
-</table>
+Contributions are welcome! If you find any bugs or issues, please submit them in the [issue tracker](https://github.com/tawhidmonowar/WebCapture/issues). If you would like to contribute code, please fork the repository and create a pull request.
 
 ## Save Palestine
 Stand up for Palestine's existence! It is disappearing from Maps, let us raise our voices and demand a fair representation for this land and its people.
