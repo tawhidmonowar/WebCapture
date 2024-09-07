@@ -13,7 +13,9 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/WebCapture?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/WebCapture?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/WebCapture?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/WebCapture) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
+<a href='https://apt.izzysoft.de/fdroid/index/apk/com.tawhid.webcapture'><img height="80" alt='Get it on F-Droid' src='https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png'/></a>
+
+![Contributors](https://img.shields.io/github/contributors/tawhidmonowar/WebCapture?color=dark-green) ![Forks](https://img.shields.io/github/forks/tawhidmonowar/WebCapture?style=social) ![Stargazers](https://img.shields.io/github/stars/tawhidmonowar/WebCapture?style=social) ![Issues](https://img.shields.io/github/issues/tawhidmonowar/WebCapture) ![IzzyOnDroid version](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.tawhid.webcapture) ![FreePalestine](https://raw.githubusercontent.com/tawhidmonowar/polyglot_ai/187d25e5f3acaa5af6b361d19053938cf6d3bf81/client/public/FreePalestine.svg)
 
 ![screenshot](./githubpage/images/screenshot.jpg)
 
