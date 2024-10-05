@@ -134,6 +134,11 @@ a.button {
   padding-top: 22px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
 }
+
+a.button:hover{
+  transform: scale(1.05);
+}
+
 a.button small {
   display: block;
   font-size: 11px;
@@ -501,6 +506,7 @@ em, i {
 .preview-img {
   padding: 0 20px 20px 20px;
 }
+
 .responsive-image {
   max-width: 100%;
 }
