@@ -11,6 +11,7 @@
     content="A simpler, faster alternative to git-filter-branch for deleting big files and removing passwords from Git history.">
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
+  <link rel="stylesheet" href="githubpage/stylesheets/imageModal.css">
   <link rel="stylesheet" type="text/css" href="githubpage/stylesheets/stylesheet.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="githubpage/stylesheets/pygment_trac.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="githubpage/stylesheets/print.css" media="print" />
@@ -61,9 +62,16 @@
         <!--<pre><code>$ bfg --strip-blobs-bigger-than 100M --replace-text banned.txt repo.git
 </code></pre>-->
 
-<div class="preview-img">
-  <img src="https://github.com/tawhidmonowar/WebCapture/raw/main/screenshot/screenshot.png">
+<div class="image-container">
+  <img src="/githubpage/images/screenshot.jpg" alt="Description" id="clickableImage" />
 </div>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage" />
+</div>
+
               
         
        
@@ -188,5 +196,6 @@ SOFTWARE.
   </div>
 
 </body>
-
+  <!-- JavaScript is loaded after html content is loaded to get the divs for the image modal -->
+  <script src="githubpage/javascripts/main.js"></script>
 </html>
