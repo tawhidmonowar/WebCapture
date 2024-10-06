@@ -33,9 +33,13 @@
     position: absolute;
     top: 15px;
     right: 35px;
-    color: white;
+    color: grey;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .close:hover{
+    color:#2879d0;
   }
   

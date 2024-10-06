@@ -91,6 +91,13 @@ header h2 {
   margin: 0 auto;
 }
 
+.innerLogoSlogun{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 #content-wrapper {
   border-top: solid 1px #fff;
   padding-top: 30px;
@@ -378,6 +385,17 @@ footer a:hover {
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+  .innerLogoSlogun{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.iconPic{
+  position: relative;
+  top: 50px;
+}
   .inner {
     width: 740px;
   }
@@ -407,6 +425,16 @@ footer a:hover {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
+  .innerLogoSlogun{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .iconPic{
+  width: 80px;
+  }
   .inner {
     width: 93%;
   }
